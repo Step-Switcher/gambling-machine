@@ -1,7 +1,7 @@
 // i can either fix this later or continue with the most batshit insane setup possible
 
 var game = {
-    money: 10 ** 12,
+    money: 0,
     current_game: 0,
 
     multiplier: 1,
@@ -420,7 +420,22 @@ function unlock_check() {
     }
 }
 function cost_check() {
-
+    let check = 0;
+    if (game.roul_count_real == game.roul_up_count) {
+        check++;
+    }
+    if (game.dice_count_real == game.dice_up_count) {
+        check++;
+    }
+    if (game.jack_count_real == game.jack_up_count) {
+        check++;
+    }
+    if (game.slot_count_real == game.slot_up_count) {
+        check++;
+    }
+    if (check == 4) {
+        game.divided = false;
+    }
 }
 function effect(pick) {
     if (game.slot_effect_timers[pick] > 0) {
