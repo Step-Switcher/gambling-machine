@@ -1,0 +1,237 @@
+body {
+    background-color: #165636;
+    display: block;
+  }
+div {
+    background-color: #114224;
+    /*border-style: solid;
+    border-color: #6A0636;
+    border-width: 1px;*/
+}
+.text {
+    color: white;
+    font-weight: bold;
+
+}
+.button {
+    background-color: #6A0636;
+    color: white;
+    font-weight: bold;
+    height: 80px;
+    width: 160px;
+}
+.small {
+    font-weight: normal;
+}
+.small_button {
+    height: 40px;
+    width: 100px;
+}
+.slim_button {
+    height: 40px;
+    width: 160px;
+}
+.square {
+    height: 60px;
+    width: 100px;
+    visibility: hidden;
+}
+
+#hud {
+    position: fixed;
+    align-self: center;
+    text-align: center;
+    margin: auto;
+    top: 0;
+    left: 25%;
+    max-width: 50vw;
+    width: 50vw;
+    height: 20vh;
+}
+#money {
+    font-size: 40px;
+}
+#fuck {
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    left: 0;
+}
+#shit {
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    right: 0;
+}
+#multiplier {
+    display: none;
+}
+#roulette {
+    margin: auto;
+    width: 60vw;
+    height: 60vh;
+    left: 20%;
+    top: 20%;
+    position: fixed;
+    display: flex;
+}
+#roul_text {
+    position:absolute;
+    margin:auto;
+    width:55%;
+    height:80%;
+}
+#roul_main {
+    position:absolute;
+    width:100%;
+    bottom:0;
+    left:0;
+}
+#roul_info {
+    visibility: hidden;
+}
+#roul_ticks {
+    visibility: hidden;
+}
+#roul_auto {
+    visibility: hidden;
+}
+#roul_upgrade {
+    visibility: hidden;
+}
+#roul_setting {
+    display:none;
+    width: 40%;
+    position:absolute;
+    right: 0;
+}
+#roul_input {
+    size: "45";
+    font-size: 20px;
+    max-width: 40px;
+}
+#roul_mode_sub1 {
+    display: none;
+}
+#roul_mode_sub2 {
+    display: none;
+}
+
+#five_dice {
+    display: none;
+    margin: auto;
+    width: 60vw;
+    height: 60vh;
+    left: 20%;
+    top: 20%;
+    position: fixed;
+}
+#five_dice_text {
+    position:absolute;
+    margin:auto;
+    visibility: hidden;
+    width:55%;
+    height:80%;
+}
+#five_dice_main {
+    position:absolute;
+    width:100%;
+    bottom:0;
+    left:0;
+}
+#five_dice_auto { 
+    visibility: hidden;
+}
+#fvdc_upgrade {
+    visibility: hidden;
+}
+#five_dice_sett {
+    visibility: hidden;
+    width: 40%;
+    position:absolute;
+    right: 0;
+}
+#blackjack {
+    display: none;
+    margin: auto;
+    width: 60vw;
+    height: 60vh;
+    left: 20%;
+    top: 20%;
+    position: fixed;
+}
+#jack_text {
+    position:absolute;
+    margin:auto;
+    visibility: hidden;
+    width:55%;
+    height:80%;
+}
+#jack_main {
+    position:absolute;
+    width:100%;
+    bottom:0;
+    left:0;
+}
+#jack_auto { 
+    visibility: hidden;
+}
+#jack_upgrade {
+    visibility: hidden;
+}
+#jack_sett {
+    visibility: hidden;
+    width: 40%;
+    position:absolute;
+    right: 0;
+}
+#slot_machine {
+    display: none;
+    margin: auto;
+    width: 60vw;
+    height: 60vh;
+    left: 20%;
+    top: 20%;
+    position: fixed;
+}
+#slot_text {
+    position:absolute;
+    margin:auto;
+    visibility: hidden;
+    width:55%;
+    height:80%;
+}
+#slot_main {
+    position:absolute;
+    width:100%;
+    bottom:0;
+    left:0;
+}
+#slots_auto { 
+    visibility: hidden;
+}
+#slots_upgrade {
+    visibility: hidden;
+}
+#slot_sett {
+    visibility: hidden;
+    width: 40%;
+    position:absolute;
+    right: 0;
+}
+#slot_render {
+    text-align: center;
+}
+#selection {
+    margin: auto;
+    align-self: center;
+    text-align: center;
+    width: 40vw;
+    height: 18vh;
+    left: 30%;
+    bottom: 0%;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

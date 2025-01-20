@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>
+        gambling machine
+    </title>
+</head>
+<!-- pardon the mess please-->
+<body>
+    <div id="hud">
+        <p class="text" id="money">
+            0 money
+        </p>
+        <div id="fuck">
+            <p class="text small" id="cooldown">
+
+            </p>
+        </div>
+        <div id="shit">
+            <p class="text small" id="multiplier">
+                current mult none
+            </p>
+        </div>
+    </div>
+
+    <div id="roulette">
+        <div id="roul_text">
+            <p class="text" id="roul_info">
+                sample text
+            </p>
+            <p class="text small" id="roul_ticks">
+                sample text
+            </p>
+        </div>
+        <br>
+        <div id="roul_main">
+            <button class="button" id="roul_increment" onclick="roulette()">
+                <br>spin the roulette<br><br>
+            </button>
+            <button class="button" id="roul_auto" onclick="auto_roulette()">
+                auto spin <br><br> costs 200 money
+            </button>
+            <button class="button" id="roul_upgrade" onclick="roul_up_add()">
+                higher payouts <br> (1 -> 2) <br> costs 10 money
+            </button>
+        </div>
+        <br>
+        <div id="roul_setting">
+            <button class="button slim_button" id="roul_mode_1" onclick="roul_setting(1,3,0)">
+                bet on groups
+            </button>
+            <button class="button slim_button" id="roul_mode_2" onclick="roul_setting(2,0,0)">
+                bet on number
+            </button>
+
+            <div id="roul_mode_sub1">
+                <button class="button small_button" id="roul_a_a" onclick="roul_setting(1,1,game.roul_sub_2)">
+                    odds
+                </button>
+                <button class="button small_button" id="roul_a_b" onclick="roul_setting(1,2,game.roul_sub_2)">
+                    evens
+                </button>
+                <br>
+                <button class="button small_button" id="roul_b_a" onclick="roul_setting(1,game.roul_sub_1,1)">
+                    red (&lt;= 18)
+                </button>
+                <button class="button small_button" id="roul_b_b" onclick="roul_setting(1,game.roul_sub_1,2)">
+                    black (&gt;= 19)
+                </button>
+                <br>
+                <button class="button small_button" id="roul_reset" onclick="roul_setting(1,3,0)">
+                    reset bets
+                </button>
+            </div>
+
+            <div id="roul_mode_sub2">
+                <p class="text small">
+                    enter a number from 1 to 36
+                </p>
+                <input type="number" id="roul_input" min="1" max="36">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="five_dice">
+        <div id="five_dice_text">
+            <p class="text" id="five_dice_info">
+                
+            </p>
+            <p class="text small" id="five_dice_subinf">
+                
+            </p>
+            <p class="text small" id="fvdc_ticks">
+                sample text
+            </p>
+        </div>
+
+        <div id="five_dice_main">
+            <button class="button" id="five_dice_roll" onclick="five_dice()">
+                unlock five dice<br><br> costs 500 money
+            </button>
+            <button class="button" id="five_dice_auto" onclick="auto_dice()">
+                auto roll <br><br> costs 20.00 K money
+            </button>
+            <button class="button" id="fvdc_upgrade" onclick="fvdc_up_add()">
+                higher base multiplier <br> (1.0 -> 1.2) <br> costs 2.000 K money
+            </button>
+        </div>
+
+        <div id="five_dice_sett">
+            <button class="button slim_button" id="fvdc_mode_two" onclick="five_dice_sett(1)">
+                pair
+            </button>
+            <button class="button slim_button" id="fvdc_mode_tutu" onclick="five_dice_sett(2)">
+                two pair
+            </button>
+            <br>
+            <button class="button slim_button" id="fvdc_mode_three" onclick="five_dice_sett(3)">
+                three of a kind
+            </button>
+            <button class="button slim_button" id="fvdc_mode_full" onclick="five_dice_sett(4)">
+                full house
+            </button>
+            <br>
+            <button class="button slim_button" id="fvdc_mode_four" onclick="five_dice_sett(5)">
+                four of a kind
+            </button>
+            <button class="button slim_button" id="fvdc_mode_five" onclick="five_dice_sett(6)">
+                five of a kind
+            </button>
+            <br>
+            <button class="button slim_button" id="fvdc_mode_reset" onclick="five_dice_sett(0)">
+                reset
+            </button>
+
+        </div>
+
+    </div>
+
+    <div id="blackjack">
+        <div id="jack_text">
+            <p class="text" id="jack_info">
+                foo fighters
+            </p>
+            <p class="text small" id="jack_sub_info">
+                buddy holly
+            </p>
+            <p class="text small" id="jack_ticks">
+                penis
+            </p>
+        </div>
+
+        <div id="jack_main">
+            <button class="button" id="blackjack_draw" onclick="blackjack()">
+                unlock blackjack<br><br> costs 10.00 M money
+            </button>
+            <button class="button" id="jack_auto" onclick="auto_jack()">
+                auto blackjack <br><br> costs 400.0 M money
+            </button>
+            <button class="button" id="jack_upgrade" onclick="jack_up_add()">
+                higher payouts <br> (100.0 K -> 150.0 K) <br> costs 30.00 M money
+            </button>
+        </div>
+
+        <div id="jack_sett">
+            <p class="text small">
+                bet on last played card of hand
+            </p>
+            <button class="button slim_button" id="jack_mode_ace" onclick="jack_sett(1)">
+                ace
+            </button>
+            <button class="button slim_button" id="jack_mode_num" onclick="jack_sett(2)">
+                number card
+            </button>
+            <button class="button slim_button" id="jack_mode_face" onclick="jack_sett(3)">
+                face card
+            </button>
+            <button class="button slim_button" id="jack_mode_reset" onclick="jack_sett(0)">
+                reset bet
+            </button>
+        </div>
+
+    </div>
+
+    <div id="slot_machine">
+        <div id="slot_text">
+            <p class="text" id="slot_info">
+                slot machine results:
+            </p>
+            <p class="text" id="slot_render">
+                uogh
+            </p>
+            <p class="text small" id="slot_sub_info">
+
+            </p>
+            <p class="text small" id="slot_ticks">
+                issho
+            </p>
+        </div>
+        <div id="slot_main">
+            <button class="button" id="slots_spin" onclick="slot_machine()">
+                unlock slot machine<br><br> costs 300.0 B money
+            </button>
+            <button class="button" id="slots_auto" onclick="auto_slots()">
+                auto slot machine <br><br> costs 6.000 T money
+            </button>
+            <button class="button" id="slots_upgrade" onclick="slot_up_add()">
+                stronger effects <br> (x1.0 -> x1.1) <br> costs 1.000 T money
+            </button>
+        </div>
+        <div id="slot_sett">
+
+        </div>
+    </div>
+
+    <div id="selection">
+        <button class="button square" id="select_roul" onclick="game_change(0)">
+            roulette
+        </button>
+        <button class="button square" id="select_dice" onclick="game_change(1)">
+            dice
+        </button>
+        <button class="button square" id="select_jack" onclick="game_change(2)">
+            blackjack
+        </button>
+        <button class="button square" id="select_slot" onclick="game_change(3)">
+            slot machines
+        </button>
+        <button class="button square">
+            xxxxx
+        </button>
+        <button class="button square">
+            xxxxx xxxx
+        </button>
+        <button class="button square">
+            xxxxxxxxx
+        </button>
+        <button class="button square">
+            xxxxxxxx
+        </button>
+        <button class="button square">
+            xxxxx xxxxx
+        </button>
+        <button class="button square">
+            xxxxx
+        </button>
+        <button class="button square">
+            xxxxx
+        </button>
+        <button class="button square">
+            xxxxxxx
+        </button>
+    </div>
+    <script src="settings.js" charset="utf-8" type="text/javascript"></script>
+    <script src="subgame.js" charset="utf-8" type="text/javascript"></script>
+    <script src="main.js" charset="utf-8" type="text/javascript"></script>
+</body>
+</html>
